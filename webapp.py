@@ -20,7 +20,7 @@ st.set_page_config(
 # Tries to get the key from Streamlit Secrets (for Web Deployment)
 # If not found, asks the user to input it (for Local Testing)
 try:
-    api_key = st.secrets["AIzaSyCszLkcBMZeUCBsi0SNCGOoJ21P-bVguAI"]
+    api_key = st.secrets["GOOGLE_API_KEY"]
 except:
     api_key = st.text_input("Enter Google API Key", type="password")
 
@@ -155,4 +155,5 @@ if image_input and api_key:
                         st.error(f"AI Analysis Error: {e}")
 
 elif not api_key:
+
     st.info("👆 Please enter your Google API Key to start.")
